@@ -14,6 +14,7 @@ def f(x, y, a=None, iter=255, mu=0.00001):
     xhat = xhat[:-len(a) + 1]
     err = x - xhat
     error = err[i]
+    errors.append(error)
     temp_coefficients = []
     for idx, ai in enumerate(a):
       temp_coefficients.append(ai + mu * error * y[i - idx] if i - idx >= 0 else ai)
